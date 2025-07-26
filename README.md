@@ -18,7 +18,38 @@ A scalable and customizable Python-based web scraper capable of extracting artic
 
 ## 🛠 Installation
 
+# 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/adaptive-news-scraper.git
 cd adaptive-news-scraper
+```
+
+# 2. (Recommended) Create a virtual environment
+```bash
+python -m venv venv
+```
+# On Windows:
+```bash
+venv\Scripts\activate
+```
+# On Mac/Linux:
+```bash
+source venv/bin/activate
+```
+
+# 3. Install required Python packages
+```bash
 pip install -r requirements.txt
+```
+
+# 4. (Optional) Install Playwright for JavaScript-rendered pages
+```bash
+pip install playwright
+playwright install
+```
+
+# 5. You're ready to run the scraper!
+```bash
+python scraper.py  # or your entry point script
+```
+
