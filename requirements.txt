@@ -1,0 +1,10 @@
+selenium
+lxml
+beautifulsoup4
+requests
+newspaper3k
+webdriver-manager
+pydantic
+python-multipart
+playwright
+httpx
