@@ -160,9 +160,15 @@ Default Model [API]
 
 Created new json files where one stores goodlist and other stores websites , this was done so that api can directly interact with these lists which were previously inside .py files which could not be accessed 
 
-Created save and fetch function for both of these json files so that they can be updated and viewed 
+Created save and fetch function for both of these json files so that they can be updated and viewed
+
+Initially the api program was its own seperate folder but due to access issues for react it was moved inside the frontend
 
 ___________________________________
+
+Iteration 1 [API]
+
+Created ts api that interacts with the frontend , since frontend cannot directly with python files had to built it using typescript , it contains fetch functions for viewing the lists and websites that were added , and save function for changing the lists and websites from the frontend itself , these were done through async functions to increase reliability
 ___________________________________
 
 Default Model[REACT]
