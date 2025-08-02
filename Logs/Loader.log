@@ -1,0 +1,5 @@
+2025-08-02 12:55:08,912 - INFO - ====== WebDriver manager ======
+2025-08-02 12:55:11,800 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-02 12:55:12,287 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-02 12:55:12,529 - INFO - Driver [C:\Users\danyl\.wdm\drivers\chromedriver\win64\138.0.7204.183\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-02 12:55:19,106 - INFO - Extracting article: stock picks of the week: 6 stocks with consistent score improvement and return potential of more than 21% in 1 year
