@@ -1,27 +1,37 @@
 import React, { useEffect, useState } from "react";
-import KeywordEditor from "./components/Key_editor";
+import ListEditor from "./components/list_editor";
 import SiteEditor from "./components/site_editor";
-import { fetchConfig, saveConfig } from "../api/scraperAPI";
+import {fetchConfig, saveConfig } from "./api/scraper_api.ts";
+
+interface Config{
+  goodlist: string[];
+  websites:string[];
+}
+
 function App() {
-  const [keywords, setKeywords] = useState([]);
-  const [sites, setSites] = useState([]);
+  const [list, setList] = useState<string[]>([]);
+  const [site, setsites] = useState<string[]>([]);
 
   useEffect(() => {
-    fetchConfig().then((data) => {
-      setKeywords(data.goodlist);
-      setSites(data.websites);
-    });
+    fetchConfig().then((data :Config) => {
+      console.log("Fetched Config:",data);
+      console.log("goodlist:",data["goodlist"]);
+      console.log("websites:",data["websites"]);
+      setList(data["goodlist"]);
+      setsites(data["websites"]);
+    }).
+    catch((err) =>console.error("Fetch Failed",err))
   }, []);
 
   const handleSave = () => {
-    saveConfig({ goodlist: keywords, websites: sites });
+    saveConfig({ goodlist: list, websites: site });
   };
 
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">🔧 Scraper Config Editor</h1>
-      <KeywordEditor keywords={keywords} setKeywords={setKeywords} />
-      <SiteEditor sites={sites} setSites={setSites} />
+      <ListEditor list={list} setList={setList} />
+      <SiteEditor site={site} setsites={setsites} />
       <button
         onClick={handleSave}
         className="mt-4 p-2 bg-blue-600 text-white rounded"

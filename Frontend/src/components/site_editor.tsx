@@ -1,22 +1,28 @@
-function siteEditor({ keywords, setKeywords }) {
-  const updatesite = (index, newValue) => {
-    const updated = [...keywords];
+import React from "react";
+
+interface Siteseditorprop{
+  site:string[];
+  setsites:React.Dispatch<React.SetStateAction<string[]>>;
+}
+function SiteEditor({site, setsites }:Siteseditorprop) {
+  const updatesite = (index: number, newValue:string) => {
+    const updated = [...site];
     updated[index] = newValue;
-    setKeywords(updated);
+    setsites(updated);
   };
 
-  const addKeyword = () => setKeywords([...keywords, ""]);
-  const removeKeyword = (index) => setKeywords(keywords.filter((_, i) => i !== index));
+  const addKeyword = () => setsites([...site, ""]);
+  const removeKeyword = (index:number) => setsites(site.filter((_, i) => i !== index));
 
   return (
     <div className="mb-6">
-      <h2 className="text-lg font-semibold">🧠 Keywords Filter (goodlist)</h2>
-      {keywords.map((kw, i) => (
+      <h2 className="text-lg font-semibold">Websites Filter (goodlist)</h2>
+      {site.map((kw, i) => (
         <div key={i} className="flex mb-2">
           <input
             type="text"
             value={kw}
-            onChange={(e) => updateKeyword(i, e.target.value)}
+            onChange={(e) => updatesite(i, e.target.value)}
             className="border p-1 flex-1"
           />
           <button onClick={() => removeKeyword(i)} className="ml-2 text-red-500">X</button>
@@ -27,4 +33,4 @@ function siteEditor({ keywords, setKeywords }) {
   );
 }
 
-export default siteEditor;
+export default SiteEditor;

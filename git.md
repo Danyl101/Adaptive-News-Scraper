@@ -7,6 +7,8 @@ git commit -m
 git pull origin main --rebase 
 git push origin main
 
+git add -A (if folders were changed)
+
                             VIRTUAL ENVIRONMENT
 
 python -m venv venv

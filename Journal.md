@@ -169,9 +169,11 @@ ___________________________________
 Iteration 1 [API]
 
 Created ts api that interacts with the frontend , since frontend cannot directly with python files had to built it using typescript , it contains fetch functions for viewing the lists and websites that were added , and save function for changing the lists and websites from the frontend itself , these were done through async functions to increase reliability
+
 ___________________________________
 
 Default Model[REACT]
 
+So changed the components section as in list editor and site editor to be aligned with the app program ,set up interfaces on both of them to properly define the parameters in functions , in App created an interface to properly define the data import coming in from api , and changed the function of all keyword (site,list,setsites,setlist) from  being a simple usestate to being a string
 
 

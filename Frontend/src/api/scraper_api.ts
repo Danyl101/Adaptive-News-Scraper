@@ -1,10 +1,15 @@
-export const fetchConfig = async() =>{
+interface Config {
+    goodlist: string[];
+    websites: string[];
+}
+
+export const fetchConfig = async() :Promise<Config> =>{
     const [goodlistRes,websitesRes]=await Promise.all([
         fetch("http://localhost:5000/api/fetch-goodlist"),
         fetch("http://localhost:5000/api/fetch-websites")
     ])
-    const goodlist=await goodlistRes.json
-    const websites=await websitesRes.json
+    const goodlist=await goodlistRes.json()
+    const websites=await websitesRes.json()
     return {goodlist,websites}
 }
 export const saveConfig = async(config : {goodlist:any ,websites:any}) =>{
