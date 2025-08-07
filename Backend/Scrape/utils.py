@@ -19,25 +19,24 @@ logging.basicConfig(
     filemode='w'
 )
 
-WEBSITE_PATH = "Datasets/websites.json"
-GOODLIST_PATH = "Datasets/goodlist.json"
+PATH = "Datasets/site_filter.json"
 
 def load_website():
-    if os.path.exists(WEBSITE_PATH):
-        with open(WEBSITE_PATH, "r") as f:
-            return json.load(f)
-    return {"websites": [], "goodlist": []}
+    if os.path.exists(PATH):
+        with open(PATH, "r") as f:
+            data=json.load(f)
+        websites=data["websites"]
+    return websites
 
 def load_goodlist():
-    if os.path.exists(GOODLIST_PATH):
-        with open(GOODLIST_PATH, "r") as f:
-            return json.load(f)
-    return {"websites": [], "goodlist": []}
+    if os.path.exists(PATH):
+        with open(PATH, "r") as f:
+            data=json.load(f)
+        goodlist=data["goodlist"]
+    return goodlist
 
-website_load = load_website()
-websites = website_load.get("websites", [])
-goodlist_load = load_goodlist()
-goodlist = goodlist_load.get("goodlist", [])
+websites = load_website()
+goodlist = load_goodlist()
 
 def setup_driver(): #Setup Chrome WebDriver
     chrome_options = Options()
