@@ -1,5 +1,5 @@
-from Backend.Scrape.link_extract import scrape_multiple_sites
-from utils import websites,logging,goodlist
+from link_extract import scrape_multiple_sites
+from utils import logging,websites,goodlist
 
 
 if __name__ == "__main__":

@@ -84,6 +84,11 @@ utils contains the supporting function that are not integral but are general pur
 Scrape_run contains the main run program
 
 ___________________________
+
+Iteration 7[SCRAPER]
+
+So changed the data loading sequence , since if frontend have to manipulate the filters and sites then they have to be present outside of a python program,so created a new json file that contains the filters and sites , it was two initially but that could cause issues in frontend so made it one , added new functions to scraper to load these json files as needed 
+___________________________
 ___________________________
 
 Default Model [LOADER]
@@ -172,8 +177,20 @@ Created ts api that interacts with the frontend , since frontend cannot directly
 
 ___________________________________
 
+Iteration 2 [API]
+
+Advanced the apis especially typescript to receive inputs from the browser, changed the funcionalities a bit , now instead of adding and viewing only , we instead can now add filters and sites view them as well as remove any ones , these were all done in async and was done alongside the gui developed by vercel
+___________________________________
+___________________________________
+
 Default Model[REACT]
 
 So changed the components section as in list editor and site editor to be aligned with the app program ,set up interfaces on both of them to properly define the parameters in functions , in App created an interface to properly define the data import coming in from api , and changed the function of all keyword (site,list,setsites,setlist) from  being a simple usestate to being a string
 
+___________________________________
+
+
+Iteration 1[REACT]
+
+So decided to offload the design development of the program to vercel and created a simple clean gui with it , the functionality remained the exact same but there were alot of gui additions
 
